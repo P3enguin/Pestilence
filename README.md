@@ -21,7 +21,7 @@ Each time the infected binary runs, the virus code execute and It spreads again.
 
 
 ## Oligomorphic Virus:
-To make life hard for antivirus companies and reverse engineers, virus devs started freestyling to hide the functionality of the virus. One of the early approaches involved encrypting the main body, and injecting a small piece of code that executed first to decrypt the original virus and then jumping to it.</br>
+To make life difficult for antivirus companies and reverse engineers, virus developers started freestyling to hide the functionality of the virus. One of the early approaches involved encrypting the main body and injecting a small piece of code that executed first to decrypt the original virus and then jump to it.</br>
 
 Oligomorphic viruses, also known as semi-polymorphic viruses, carry with them a set of decryptors. Each time the virus replicat, It choose a random decryptor, making the code not static and always changing.
 
