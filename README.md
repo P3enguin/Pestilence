@@ -1,17 +1,22 @@
 # Pestilence
 
 ![N|Solid](https://cdn.thecollector.com/wp-content/uploads/2021/11/sabatelli-decameron-plague-florence-print.jpg)
-<span style="color:gray"><small> The black death in florence 1348, caused by the Yersinia <b>Pestis</b> bacterium.</small></span>
+<sub>           The black death in florence 1348, caused by the Yersinia <b>Pestis</b> bacterium.</sub> 
 
-
+<br/>
 Pestilence is a project under the 42 malware branch. The objective is to make an oligomorphic virus that infect ELF binaries located in two temporary folders.
 
 ## Viruses:
 > A program that can infect other programs by modifying them to include a possibly evolved copy of itself - <ins>Fred Cohen</ins>
 
-Basically they inject their own source code to a binary, change it to execute their code first before jumping to the original binary main.<br/>
+Basically Viruses inject their own source code to a binary, change it to execute their code first before jumping to the original binary main.
+<br/>
+<br/>
+
 ![N|Solid](https://i.postimg.cc/V6pSGhzB/sc.png)
-In this way each time the infected binary runs, the virus code execute and It spreads again.
+
+<br/>
+Each time the infected binary runs, the virus code execute and It spreads again.
 
 
 
@@ -19,8 +24,9 @@ In this way each time the infected binary runs, the virus code execute and It sp
 To make life hard for antivirus companies and reverse engineers, virus devs started freestyling to hide the functionality of the virus. One of the early approaches involved encrypting the main body, and injecting a small piece of code that executed first to decrypt the original virus and then jumping to it.</br>
 
 Oligomorphic viruses, also known as semi-polymorphic viruses, carry with them a set of decryptors. Each time the virus replicat, It choose a random decryptor, making the code not static and always changing.
-</br>
-![N|Solid](https://www.researchgate.net/profile/Babak-Bashari-Rad/publication/235641122/figure/fig3/AS:299935946821642@1448521710512/Structure-and-mechanism-of-oligomorphic-virus.png)
+
+
+![N|Solid](https://i.postimg.cc/d3SCz36T/469111-1-En-14-Fig3-HTML.png)
 
 
 ##  The project:
@@ -76,10 +82,10 @@ Here are the changes that need to be made :</br>
 ## Note:
 this was the first time I make something in assembly, I did not respect any coding style or conventions. So I treated registers as my legos. The code might seems messy but that would be good as anti-reverse technique :D
 ## Resources
-- Oligomorphic viruses :
-https://www.informit.com/articles/article.aspx?p=366890&seqNum=4</br>Talks about polymorphism but mentions oligomorphism :
-https://samples.vx-underground.org/Papers/Other/Code%20Mutation/0000-00-00%20-%20Introductory%20Primer%20To%20Polymorphism%20in%20Theory%20and%20Practice.pdf
-- PT_NOTE to PT_LOAD:
+- Oligomorphic viruses :</br>
+https://www.informit.com/articles/article.aspx?p=366890&seqNum=4</br>Talks about polymorphism but mentions oligomorphism :</br>
+https://samples.vx-underground.org/Papers/Other/Code%20Mutation/0000-00-00%20-%20Introductory%20Primer%20To%20Polymorphism%20in%20Theory%20and%20Practice.pdf</br>
+- PT_NOTE to PT_LOAD:</br>
 https://tmpout.sh/1/2.html
 https://www.symbolcrash.com/2019/03/27/pt_note-to-pt_load-injection-in-elf/
 
