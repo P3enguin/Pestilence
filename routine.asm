@@ -143,7 +143,7 @@ _parsing:
     lea     rdi, [rbp - DIRENT_BUFF]
     add     rdi, r13
     movzx	r10, word [rdi + 16]        ; d_reclen
-   	mov		al,  byte [rdi + r10 - 1]   ; file type
+    mov     al,  byte [rdi + r10 - 1]   ; file type
     lea     rsi, [rdi  + 18]            ; address of d_name field
     add     r13, r10
     cmp     al,  DT_REG                 ; only process regular files
